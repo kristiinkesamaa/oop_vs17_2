@@ -22,3 +22,5 @@ $mainTmpl->set('content', 'Lehe sisu');
 echo '<pre>';
 print_r($mainTmpl);
 echo '</pre>';
+// väljastame sisuga täidetud mall
+echo $mainTmpl->parse();
