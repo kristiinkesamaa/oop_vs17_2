@@ -32,4 +32,19 @@ class linkobject extends http
         }
         $link = $link.fixUrl($name).$this->eq.fixUrl($value);
     }
+
+    // moodustame valmislink kasutades põhilingi ja
+    // $this->addToLink funktisiooni abil valmistatud paarid
+    // $pairs = array('control'=>'login', 'user'=>'test');
+    // getLink($pairs);
+    function getLink($add = array()){
+        $link = '';
+        foreach ($add as $name=>$value){
+            $this->addToLink($link, $name, $value);
+        }
+        if($link != ''){
+            $this->baseLink = $this->baseLink.'?'.$link;
+        }
+        return $this->baseLink;
+    }
 }
