@@ -23,3 +23,4 @@ $mainTmpl->set('content', 'Lehe sisu');
 echo $mainTmpl->parse();
 // kontrollime $http objekti tööd
 echo HTTP_HOST.SCRIPT_NAME.'<br />';
+echo $http->baseLink.'<br />';
