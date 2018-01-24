@@ -22,4 +22,14 @@ class linkobject extends http
         parent::__construct();
         $this->baseLink = $this->protocol.HTTP_HOST.SCRIPT_NAME;
     }
+
+    // moodustame paarid kujul nimi=väärtus
+    // ja ühendame paarid omavahel kujul:
+    // nimi1=vaartus1&nimi2=vaartus2 jne
+    function addToLink(&$link, $name, $value){
+        if($link != ''){
+            $link = $link.$this->delim;
+        }
+        $link = $link.$name.$this->eq.$value;
+    }
 }
