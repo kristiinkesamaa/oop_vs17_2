@@ -30,6 +30,6 @@ class linkobject extends http
         if($link != ''){
             $link = $link.$this->delim;
         }
-        $link = $link.$name.$this->eq.$value;
+        $link = $link.fixUrl($name).$this->eq.fixUrl($value);
     }
 }
