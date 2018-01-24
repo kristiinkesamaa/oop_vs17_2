@@ -17,6 +17,7 @@ class http
      */
     public function __construct(){
         $this->init();
+        $this->initConst();
     }
 
     // klassi muutujate väärtustega täitmine
@@ -28,4 +29,13 @@ class http
         $this->server = $_SERVER;
     }
 
+    // vajalike konstandite defineerimine
+    function initConst(){
+        $constNames = array('HTTP_HOST', 'SCRIPT_NAME');
+        foreach ($constNames as $constName){
+            if(!defined($constName) and isset($this->server[$constName])){
+                define($constName, $this->server[$constName]);
+            }
+        }
+    }
 }
