@@ -21,6 +21,3 @@ require_once 'menu.php';
 $mainTmpl->set('content', 'Lehe sisu');
 // väljastame sisuga täidetud mall
 echo $mainTmpl->parse();
-// kontrollime $http objekti tööd
-$control = $http->get('control');
-echo $control.'<br />';
