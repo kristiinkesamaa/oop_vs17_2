@@ -9,6 +9,11 @@
 // loome menüü ehitamiseks vajalikud objektid
 $menuTmpl = new template('menu.menu'); // menüü mall
 $itemTmpl = new template('menu.item'); // menüü elemendi mall
+// avalehe loomine
+$itemTmpl->set('name', 'avaleht');
+$link = $http->getLink();
+$itemTmpl->set('link', $link);
+$menuTmpl->add('menu_items', $itemTmpl->parse());
 
 // loome üks menüü element nimega esimene
 // määrame menüüs väljastava elemendi nime
