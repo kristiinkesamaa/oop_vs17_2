@@ -9,7 +9,8 @@
 // loome menüü ehitamiseks vajalikud objektid
 $menuTmpl = new template('menu.menu'); // menüü mall
 $itemTmpl = new template('menu.item'); // menüü elemendi mall
-// avalehe loomine
+
+// avalehe element
 $itemTmpl->set('name', 'avaleht');
 $link = $http->getLink();
 $itemTmpl->set('link', $link);
