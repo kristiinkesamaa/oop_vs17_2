@@ -49,4 +49,10 @@ class http
             return false;
         }
     }
+
+    //funktsioon, mis võimaldab määrata $this->vars[$name] elemendile
+    // ka kindel väärtus $value
+    function set($name, $value){
+        $this->vars[$name] = $value;
+    }
 }
