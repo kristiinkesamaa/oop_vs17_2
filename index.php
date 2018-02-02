@@ -25,3 +25,7 @@ echo $mainTmpl->parse();
 echo '<pre>';
 print_r($http->vars);
 echo '</pre>';
+// kontrollime $db objekti tööd
+echo '<pre>';
+print_r($db);
+echo '</pre>';
