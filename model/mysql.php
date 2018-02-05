@@ -47,5 +47,19 @@ class mysql
         }
         return $result;
     }
+    // andmete lugemine päringutes
+    function getData($sql){
+        $result = $this->query($sql); // saadame päringu andmebaasi
+        $data = array(); //päring andmete salvestamiseks
+        // nii kaua kui olemas andmed
+        while ($row = mysqli_fetch_assoc($result)){
+            $data[] = $row; //loeme need ridade kaupa
+        }
+        // kui probleem andmete lugemisega
+        if(count($data) == 0){
+            return false;
+        }
+        return $data; // või tagastame korralikud andmed
 
+    }
 }
