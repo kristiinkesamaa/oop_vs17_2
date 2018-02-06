@@ -23,5 +23,12 @@ require_once MODEL_DIR.'template.php'; // html vaade failide töötlus
 require_once MODEL_DIR.'http.php'; // HTTP töötlus klass
 require_once MODEL_DIR.'linkobject.php'; // Lingi töötluse klass
 
+require_once MODEL_DIR.'mysql.php'; //db töötlus klass
+
+//nõuame vajaliku konfi olemasolu
+require_once 'db_conf.php';
+
 // loome vajalikud objektid, mis on pidevalt tööl
 $http = new linkobject();
+// andmebaasi objekt
+$db = new mysql(DB_HOST, DB_USER, DB_PASS, DB_NAME);
