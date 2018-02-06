@@ -13,7 +13,7 @@ $itemTmpl = new template('menu.item'); // menüü elemendi mall
 // koostame menüü ja sisu loomise päringu
 $sql = 'SELECT content_id, content, title '.
     'FROM content WHERE parent_id='.fixDB(0).
-    'AND show_in_menu'.fixDB(1);
+    ' AND show_in_menu='.fixDB(1);
 $result = $db->getData($sql); //loeme andmed andmebaasist
 
 // kui andmed on andmebaasist olemas
